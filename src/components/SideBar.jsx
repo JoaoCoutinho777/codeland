@@ -3,7 +3,7 @@ import {Stack} from '@mui/material'
 import { categories } from '../utils/constants'
 
 
-const SideBar = ({ selectedCategory, setSelectedCategory }) => {
+const SideBar = ({ selectedCategory, setSelectedCategory, mode }) => {
   return (
     <Stack 
       direction='row' 
@@ -20,7 +20,7 @@ const SideBar = ({ selectedCategory, setSelectedCategory }) => {
           style={{
             background: category.name === 
             selectedCategory && '#FC1503',
-            color: 'white'
+            color: 'white' 
             }}
             key={category.name}
         >
@@ -28,7 +28,7 @@ const SideBar = ({ selectedCategory, setSelectedCategory }) => {
             selectedCategory ? 'white' : 'red',
             marginRight: '15px' }}>{category.icon}</span>
           <span style={{ opacity: category.name ===
-            selectedCategory ? '1' : '0.8'}}>{category.name}</span>
+            selectedCategory ? '1' : '0.8',  color: mode === true ? 'black' : 'white'}}>{category.name}</span>
         </button>
       ))}
     </Stack>

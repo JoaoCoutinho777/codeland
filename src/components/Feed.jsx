@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useState, useEffect } from 'react'
 import { Box, Stack, Typography } from '@mui/material'
 import {SideBar, Videos} from './'
 import { fetchFromAPI } from '../utils/fetchFromAPI'
 
-const Feed = () => {
+const Feed = ({ mode }) => {
 
-  const [selectedCategory, setSelectedCategory] = useState('New');
+  const [selectedCategory, setSelectedCategory] = useState('Coding');
   const [videos, setVideos] = useState([]);
+
 
   useEffect(() => {
     fetchFromAPI(`search?part=snippet&q=${selectedCategory}`)
@@ -20,11 +21,12 @@ const Feed = () => {
         <SideBar 
           selectedCategory={selectedCategory} 
           setSelectedCategory={setSelectedCategory}
+          mode={mode}
         />
         <Typography 
           className='copyright' 
           variant='body2' 
-          sx={{ mt: 1.5, color: '#fff'}}>
+          sx={{ mt: 1.5, color: mode === false ? '#fff' : '#000'}}>
             Copyright 2023 Media
         </Typography>
       </Box>
@@ -34,7 +36,7 @@ const Feed = () => {
           {selectedCategory} <span style={{ color: '#F31503'}}>Videos</span>
         </Typography>
 
-        <Videos videos={videos}/>
+        <Videos videos={videos} mode={mode}/>
       </Box>
     </Stack>
   )

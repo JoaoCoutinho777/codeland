@@ -1,10 +1,15 @@
-import React from 'react'
-import { Stack } from '@mui/material'
+import React, { useState } from 'react'
+import { Stack, Switch } from '@mui/material'
 import { Link } from 'react-router-dom'
+import { createTheme, ThemeProvider, styled } from '@mui/material/styles'
 
 import SearchBar from './SearchBar'
 
-const Navbar = () => (
+const Navbar = () => {
+
+  
+
+  return (
     <Stack direction="row" 
       alignItems="center" 
       p={2} 
@@ -14,8 +19,10 @@ const Navbar = () => (
         Codeland
       </Link>
       <SearchBar />
+      
     </Stack>
 
   )
+} 
 
 export default Navbar

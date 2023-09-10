@@ -1,8 +1,9 @@
 import React from 'react'
 import { useState } from 'react'
 import { useNavigate} from 'react-router-dom'
-import { Paper, IconButton } from '@mui/material'
+import { Paper, IconButton, Autocomplete, TextField, Stack } from '@mui/material'
 import { Search } from '@mui/icons-material'
+import { searchSugestions } from '../utils/constants'
 
 
 const SearchBar = () => {
@@ -40,7 +41,8 @@ const SearchBar = () => {
         <IconButton type='submit' sx={{ p: '10px', color: 'red' }}>
             <Search />
         </IconButton>
-    </Paper>
+    </Paper> 
+
   )
 }
 
