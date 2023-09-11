@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { useState, useEffect } from 'react'
 import { Box, Stack, Typography } from '@mui/material'
 import {SideBar, Videos} from './'

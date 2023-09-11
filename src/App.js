@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { Box, Paper, Switch } from '@mui/material'
+import { Box, Paper } from '@mui/material'
 import { Navbar, Feed, VideoDetail, ChannelDetail, SearchFeed } from './components';
-import { createTheme, ThemeProvider, styled } from '@mui/material/styles'
-import { MaterialUISwitch } from './utils/MaterialUISwitch';
+import { createTheme, ThemeProvider } from '@mui/material/styles'
+
 
 const App = () => {
     
@@ -18,10 +18,9 @@ const App = () => {
     return (
     <BrowserRouter>
         <Box> 
-            <Navbar/>
+            <Navbar mode={mode} setMode={setMode}/>
             <ThemeProvider theme={theme}>
                 <Paper>
-                    <MaterialUISwitch sx={{ position: 'sticky' }} onClick={() => setMode(!mode)}/>
                     <Routes>
                         <Route path='/' exact element={<Feed mode={mode}/>} />
                         <Route path='/video/:id' element={<VideoDetail mode={mode}/>}/>

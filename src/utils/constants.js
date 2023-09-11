@@ -20,6 +20,9 @@ export const categories = [
   { name: 'Telusko', icon: <CodeIcon />, },
 ];
 
+
+export const logo = '/images/logo.png';
+
 export const searchSugestions = [
   {term: 'JavaScript/ECMAScript'},
   {term: 'PHP'},
