@@ -10,7 +10,7 @@ While I was studing React I have the idea to create a place where I could focuse
 🖥️ Installation
 
 Clone this repo
-git clone https://github.com/JoaoCoutinho777/publi.git
+git clone https://github.com/JoaoCoutinho777/codeland.git
 
 Install dependencies
 npm install
